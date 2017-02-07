@@ -9,6 +9,29 @@ Basically, when you are using Gson and you need to exclude specific fields from 
 - Java 8
 - Dependency versions controlled by Spring IO Platform: [Athens-SR1](http://docs.spring.io/platform/docs/Athens-SR1/reference/htmlsingle/#appendix-dependency-versions)
 
+## Download
+
+To add a dependency using Maven, use the following:
+
+```pom
+<dependency>
+	<groupId>com.github.shihyuho</groupId>
+	<artifactId>jackson-dynamic-filter</artifactId>
+	<version>1.0</version>
+</dependency>
+```
+
+To add a dependency using Gradle:
+
+```xml
+dependencies {
+    compile 'com.github.shihyuho:jackson-dynamic-filter:1.0'
+}
+```
+
+To download directly: [Releases](https://github.com/shihyuho/jackson-dynamic-filter/releases)
+
+
 ## Usage
 
 ```java
