@@ -1,12 +1,11 @@
 package com.github.shihyuho.jackson.databind;
 
-import static org.assertj.core.api.Assertions.assertThat;
+import com.fasterxml.jackson.databind.ser.PropertyFilter;
+import com.github.shihyuho.jackson.databind.resolver.DynamicFilterResolver;
 
 import org.junit.Test;
 
-import com.fasterxml.jackson.databind.ser.PropertyFilter;
-import com.github.shihyuho.jackson.databind.DynamicFilterResponseBodyAdvice;
-import com.github.shihyuho.jackson.databind.resolver.DynamicFilterResolver;
+import static org.assertj.core.api.Assertions.*;
 
 /**
  * 

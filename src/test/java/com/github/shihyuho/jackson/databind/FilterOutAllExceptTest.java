@@ -25,7 +25,7 @@ import com.github.shihyuho.jackson.databind.MockController.Config;
  */
 @WebAppConfiguration
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = {Config.class})
+@ContextConfiguration(classes = Config.class)
 public class FilterOutAllExceptTest {
 
   @Autowired

@@ -1,9 +1,6 @@
 package com.github.shihyuho.jackson.databind;
 
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
+import com.github.shihyuho.jackson.databind.MockController.Config;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -16,7 +13,10 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
-import com.github.shihyuho.jackson.databind.MockController.Config;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 /**
  * 
@@ -25,7 +25,7 @@ import com.github.shihyuho.jackson.databind.MockController.Config;
  */
 @WebAppConfiguration
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(classes = {Config.class})
+@ContextConfiguration(classes = Config.class)
 public class SerializeAllExceptTest {
 
   @Autowired

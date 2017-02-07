@@ -12,7 +12,6 @@ public class SomeObject {
   private Integer c;
 
   public SomeObject() {
-    super();
   }
 
   public SomeObject(Integer a, Integer b, Integer c) {

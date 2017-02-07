@@ -1,11 +1,9 @@
 package com.github.shihyuho.jackson.databind;
 
-import java.lang.annotation.Annotation;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Objects;
-import java.util.Optional;
-import java.util.stream.Stream;
+import com.fasterxml.jackson.databind.ser.PropertyFilter;
+import com.github.shihyuho.jackson.databind.resolver.DynamicFilterResolver;
+import com.github.shihyuho.jackson.databind.resolver.FilterOutAllExceptResolver;
+import com.github.shihyuho.jackson.databind.resolver.SerializeAllExceptResolver;
 
 import org.springframework.core.MethodParameter;
 import org.springframework.http.MediaType;
@@ -16,10 +14,12 @@ import org.springframework.http.server.ServerHttpResponse;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.servlet.mvc.method.annotation.AbstractMappingJacksonResponseBodyAdvice;
 
-import com.fasterxml.jackson.databind.ser.PropertyFilter;
-import com.github.shihyuho.jackson.databind.resolver.DynamicFilterResolver;
-import com.github.shihyuho.jackson.databind.resolver.FilterOutAllExceptResolver;
-import com.github.shihyuho.jackson.databind.resolver.SerializeAllExceptResolver;
+import java.lang.annotation.Annotation;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Objects;
+import java.util.Optional;
+import java.util.stream.Stream;
 
 /**
  * Runtime switching {@code PropertyFilter} if found any {@link DynamicFilterResolver}.
@@ -28,22 +28,20 @@ import com.github.shihyuho.jackson.databind.resolver.SerializeAllExceptResolver;
  *
  */
 @ControllerAdvice
-public class DynamicFilterResponseBodyAdvice extends AbstractMappingJacksonResponseBodyAdvice {
+public final class DynamicFilterResponseBodyAdvice extends AbstractMappingJacksonResponseBodyAdvice {
 
   @SuppressWarnings("rawtypes")
   protected final Map<Class, DynamicFilterResolver<?>> resolvers = new HashMap<>();
 
   public DynamicFilterResponseBodyAdvice() {
-    super();
     addResolvers(new SerializeAllExceptResolver(), new FilterOutAllExceptResolver());
   }
 
   @Override
   public boolean supports(MethodParameter returnType,
       Class<? extends HttpMessageConverter<?>> converterType) {
-    boolean supports = super.supports(returnType, converterType)
+    return super.supports(returnType, converterType)
         && resolvers.keySet().stream().anyMatch(returnType::hasMethodAnnotation);
-    return supports;
   }
 
   @Override
@@ -57,8 +55,8 @@ public class DynamicFilterResponseBodyAdvice extends AbstractMappingJacksonRespo
    * <p>
    * NOTE: Resolvers will be distinct by {@link DynamicFilterResolver#getType()}
    * 
-   * @param resolver
-   * @param more
+   * @param resolver DynamicFilterResolver
+   * @param more DynamicFilterResolver
    */
   public <A extends Annotation> void addResolvers(DynamicFilterResolver<?> resolver,
       DynamicFilterResolver<?>... more) {
