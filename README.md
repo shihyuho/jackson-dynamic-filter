@@ -43,7 +43,7 @@ String jsonWithAllFields = mapper.writeValueAsString(someObject);
 
 PropertyFilter someFilter = SimpleBeanPropertyFilter.serializeAllExcept("someField");
 String jsonWithoutSomeField = mapper
-	.writer(new DynamicFilterProvider(someFilter)) // specific custom filter 
+	.writer(new DynamicFilterProvider(someFilter)) // determine custom filter 
     .writeValueAsString(someObject);
 ```
 
