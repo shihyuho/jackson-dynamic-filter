@@ -75,8 +75,8 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
 
 ### Using annotation
 
-- `@SerializeAllExcept` - Equlas to `SimpleBeanPropertyFilter.serializeAllExcept(...)`
-- `@FilterOutAllExcept` - Equlas to `SimpleBeanPropertyFilter.filterOutAllExcept(...)`
+- `@SerializeAllExcept` - Same as `SimpleBeanPropertyFilter.serializeAllExcept(...)`
+- `@FilterOutAllExcept` - Same as `SimpleBeanPropertyFilter.filterOutAllExcept(...)`
 
 ```java
 @Controller
