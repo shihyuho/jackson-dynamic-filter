@@ -1,6 +1,6 @@
 # Jackson Dynamic Property Filter
 
-Basically, when you are using Gson and you need to exclude specific fields from Serialization WITHOUT annotations on the target object, you will use `ExclusionStrategy`. But I didn't find an similar way to do that in Jackson. So this repo provides the simplest way to specific filters dynamically, and it also well integration with Spring MVC.
+Basically, when you are using Gson and you need to exclude specific fields from Serialization WITHOUT annotations on the target object, you will use `ExclusionStrategy`. But I didn't find an similar way to do that in Jackson. So this repo provides a easy way to specific filters dynamically, and it also well integration with Spring MVC.
 
 [![Build Status](https://travis-ci.org/shihyuho/jackson-dynamic-filter.svg?branch=master)](https://travis-ci.org/shihyuho/jackson-dynamic-filter)
 
