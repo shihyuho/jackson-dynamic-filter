@@ -37,7 +37,7 @@ To download directly: [Releases](https://github.com/shihyuho/jackson-dynamic-fil
 ```java
 ObjectMapper mapper = new ObjectMapper();
 mapper.addMixIn(Object.class, DynamicFilterMixIn.class);
-mapper.setFilterProvider(new DynamicFilterProvider()); // default serialize all
+mapper.setFilterProvider(new DynamicFilterProvider());
 
 String jsonWithAllFields = mapper.writeValueAsString(someObject);
 
