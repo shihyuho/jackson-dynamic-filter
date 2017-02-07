@@ -13,7 +13,7 @@ Basically, when you are using Gson and you need to exclude specific fields from 
 
 To add a dependency using Maven, use the following:
 
-```pom
+```xml
 <dependency>
 	<groupId>com.github.shihyuho</groupId>
 	<artifactId>jackson-dynamic-filter</artifactId>
