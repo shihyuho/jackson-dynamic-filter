@@ -14,7 +14,6 @@ import org.springframework.http.server.ServerHttpResponse;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.servlet.mvc.method.annotation.AbstractMappingJacksonResponseBodyAdvice;
 
-import java.lang.annotation.Annotation;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
@@ -28,7 +27,8 @@ import java.util.stream.Stream;
  *
  */
 @ControllerAdvice
-public final class DynamicFilterResponseBodyAdvice extends AbstractMappingJacksonResponseBodyAdvice {
+public final class DynamicFilterResponseBodyAdvice
+    extends AbstractMappingJacksonResponseBodyAdvice {
 
   @SuppressWarnings("rawtypes")
   protected final Map<Class, DynamicFilterResolver<?>> resolvers = new HashMap<>();
@@ -58,8 +58,7 @@ public final class DynamicFilterResponseBodyAdvice extends AbstractMappingJackso
    * @param resolver DynamicFilterResolver
    * @param more DynamicFilterResolver
    */
-  public <A extends Annotation> void addResolvers(DynamicFilterResolver<?> resolver,
-      DynamicFilterResolver<?>... more) {
+  public void addResolvers(DynamicFilterResolver<?> resolver, DynamicFilterResolver<?>... more) {
     resolvers.put((Class<?>) resolver.getType(), resolver);
     Stream.of(more).filter(Objects::nonNull).forEach(r -> resolvers.put((Class<?>) r.getType(), r));
   }
