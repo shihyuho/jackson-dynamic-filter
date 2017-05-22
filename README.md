@@ -79,24 +79,24 @@ public class WebMvcConfig extends WebMvcConfigurerAdapter {
 - `@FilterOutAllExcept` - Same as `SimpleBeanPropertyFilter.filterOutAllExcept(...)`
 
 ```java
-@Controller
+@RestController
 public class SomeController {
   
 	@SerializeAllExcept({"someField", "anotherField"})
 	@RequestMapping(value = "/without/some-fields", method = RequestMethod.GET)
-	@ResponseBody
 	public SomeObject withoutSomeFields() {
 		return someObject;
 	}
 	
 	@FilterOutAllExcept({"someField", "anotherField"})
 	@RequestMapping(value = "/only/some-fields", method = RequestMethod.GET)
-	@ResponseBody
 	public SomeObject onlySomeFields() {
 		return someObject;
 	}
 }
 ```
+
+> [SimpleBeanPropertyFilter javadoc](https://fasterxml.github.io/jackson-databind/javadoc/2.3.0/com/fasterxml/jackson/databind/ser/impl/SimpleBeanPropertyFilter.html)
 
 ### Custom annotation
 
@@ -134,12 +134,11 @@ public DynamicFilterResponseBodyAdvice dynamicFilterResponseBodyAdvice() {
 and then use it for you controller as follows:
 
 ```java
-@Controller
+@RestController
 public class SomeController {
   
 	@WithoutAuditingFields
 	@RequestMapping(value = "/some-path", method = RequestMethod.GET)
-	@ResponseBody
 	public SomeObject getSomeObject() {
 		return someObject;
 	}
