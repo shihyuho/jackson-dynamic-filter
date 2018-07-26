@@ -1,8 +1,11 @@
+[![Build Status](https://travis-ci.org/shihyuho/jackson-dynamic-filter.svg?branch=master)](https://travis-ci.org/shihyuho/jackson-dynamic-filter)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.shihyuho/jackson-dynamic-filter/badge.svg)](https://maven-badges.herokuapp.com/maven-central/com.github.shihyuho/jackson-dynamic-filter)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://github.com/shihyuho/jackson-dynamic-filter/blob/master/LICENSE)
+
+
 # Jackson Dynamic Property Filter
 
 Basically, when you are using Gson and you need to exclude specific fields from Serialization WITHOUT annotations on the target object, you will use `ExclusionStrategy`. But I didn't find an similar way to do that in Jackson. So this repo provides an easy way to determine filters dynamically, and it also well integration with Spring MVC.
-
-[![Build Status](https://travis-ci.org/shihyuho/jackson-dynamic-filter.svg?branch=master)](https://travis-ci.org/shihyuho/jackson-dynamic-filter)
 
 ## Requirements
 
