@@ -7,7 +7,7 @@
 
 Basically, when you are using Gson and you need to exclude specific fields from Serialization WITHOUT annotations on the target object, you will use `ExclusionStrategy`. But I didn't find an similar way to do that in Jackson. So this repo provides an easy way to determine filters dynamically, and it also well integration with Spring MVC/Spring Boot.
 
-> For Spring Boot: [jackson-dynamic-filter-spring-boot-starte](https://github.com/shihyuho/jackson-dynamic-filter-spring-boot-starter) 
+> For Spring Boot: [jackson-dynamic-filter-spring-boot-starter](https://github.com/shihyuho/jackson-dynamic-filter-spring-boot-starter) 
 
 ## Requirements
 
