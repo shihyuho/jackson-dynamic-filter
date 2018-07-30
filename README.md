@@ -12,7 +12,10 @@ Basically, when you are using Gson and you need to exclude specific fields from 
 ## Requirements
 
 - Java 8
-- Dependency versions controlled by Spring IO Platform: [Athens-SR1](http://docs.spring.io/platform/docs/Athens-SR1/reference/htmlsingle/#appendix-dependency-versions)
+- Spring IO Platform tested:
+    - [Athens-SR1](http://docs.spring.io/platform/docs/Athens-SR1/reference/htmlsingle/#appendix-dependency-versions)
+    - [Brussels-SR11](http://docs.spring.io/platform/docs/Brussels-SR11/reference/htmlsingle/#appendix-dependency-versions)
+    - [Cairo-SR2](http://docs.spring.io/platform/docs/Cairo-SR2/reference/htmlsingle/#appendix-dependency-versions)
 
 ## Download
 
@@ -22,7 +25,7 @@ To add a dependency using Maven, use the following:
 <dependency>
 	<groupId>com.github.shihyuho</groupId>
 	<artifactId>jackson-dynamic-filter</artifactId>
-	<version>1.0</version>
+	<version>1.0.1</version>
 </dependency>
 ```
 

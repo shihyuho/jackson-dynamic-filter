@@ -12,4 +12,9 @@ addons:
       - oracle-java8-installer
 
 # https://docs.travis-ci.com/user/common-build-problems/#Build-times-out-because-no-output-was-received
-script: travis_wait 360 mvn -B test -U
+script: travis_wait 360 mvn -B test -U -Dio.spring.platform.version=$IO_SPRING_PLATFORM
+
+env:
+  - IO_SPRING_PLATFORM=Athens-SR1
+  - IO_SPRING_PLATFORM=Brussels-SR11
+  - IO_SPRING_PLATFORM=Cairo-SR2
