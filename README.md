@@ -32,9 +32,7 @@ To add a dependency using Maven, use the following:
 To add a dependency using Gradle:
 
 ```xml
-dependencies {
-    compile 'com.github.shihyuho:jackson-dynamic-filter:1.0'
-}
+compile 'com.github.shihyuho:jackson-dynamic-filter:1.0.1'
 ```
 
 To download directly: [Releases](https://github.com/shihyuho/jackson-dynamic-filter/releases)
