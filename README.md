@@ -12,7 +12,7 @@ Basically, when you are using Gson and you need to exclude specific fields from 
 ## Requirements
 
 - Java 8
-- Spring IO Platform tested:
+- Supported Spring IO Platform:
     - [Athens-SR1](http://docs.spring.io/platform/docs/Athens-SR1/reference/htmlsingle/#appendix-dependency-versions)
     - [Brussels-SR11](http://docs.spring.io/platform/docs/Brussels-SR11/reference/htmlsingle/#appendix-dependency-versions)
     - [Cairo-SR2](http://docs.spring.io/platform/docs/Cairo-SR2/reference/htmlsingle/#appendix-dependency-versions)
